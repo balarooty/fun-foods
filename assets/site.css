@@ -45,37 +45,33 @@ h1, h2 { font-family: var(--display); color: var(--red); }
   text-underline-offset: .27em;
 }
 .site-header nav a[aria-current] { color: var(--red); }
-.site-header nav { display: flex; align-items: center; gap: clamp(12px, 3vw, 24px); }
-.location-link { gap: 5px; color: var(--red); }
-.location-pin {
-  position: relative;
-  width: 13px;
-  height: 13px;
-  flex: 0 0 13px;
-  margin: -4px 2px 0;
-  border-radius: 50% 50% 50% 0;
-  background: currentColor;
-  transform: rotate(-45deg);
+.location-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  min-height: 44px;
+  padding: .45em .9em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--red);
+  background: var(--paper);
+  font-weight: 750;
+  text-decoration: none;
 }
-.location-pin::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: var(--cream);
-}
+.location-link:hover { border-color: var(--red); }
+.location-link svg { flex: none; }
 .hero-copy { text-align: center; padding: clamp(36px, 7vw, 94px) 0 clamp(26px, 5vw, 54px); }
 .hero h1 { font-size: clamp(3rem, 8.1vw, 6.7rem); line-height: .96; letter-spacing: -.067em; }
 .hero h1 > * { display: inline-block; }
 .hero h1 em { font-weight: inherit; }
 .hero p { margin: 20px auto 0; max-width: 26rem; font-size: clamp(1rem, 2vw, 1.18rem); line-height: 1.5; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; }
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 50px;
   min-width: 148px;
-  margin-top: 20px;
   padding: .7rem 1.55rem;
   border: 1px solid var(--red);
   border-radius: 999px;
@@ -106,9 +102,10 @@ h1, h2 { font-family: var(--display); color: var(--red); }
 .highlights .image-note { margin-top: 24px; }
 .site-footer { border-top: 1px solid var(--line); background: #f8e9c9; }
 .footer-inner { min-height: 88px; flex-wrap: wrap; padding-block: 10px; }
-.visit-details { display: flex; flex-direction: column; gap: 4px; font-size: .95rem; line-height: 1.5; }
+.visit-details { display: flex; min-width: 0; flex-direction: column; gap: 4px; font-size: .95rem; line-height: 1.5; }
 .visit-details address { max-width: 36ch; font-style: normal; }
 .menu-intro { padding: clamp(30px, 6vw, 68px) 0 clamp(25px, 4vw, 54px); }
+.menu-intro .shell { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
 .menu-intro h1 { font-size: clamp(3.7rem, 10vw, 7rem); letter-spacing: -.075em; line-height: .92; }
 .menu-intro h1 span { color: var(--deep-red); }
 .menu-nav {
@@ -195,6 +192,7 @@ details[open] .chevron { transform: rotate(225deg); margin: 4px 3px 0 2px; }
   .menu-page .shell { width: calc(100% - 32px); }
   .menu-page .header-inner { min-height: 55px; }
   .menu-intro { padding-block: 20px 18px; }
+  .menu-intro .shell { flex-direction: column; align-items: flex-start; }
   .menu-intro h1 { font-size: clamp(2.8rem, 11vw, 4.4rem); }
   .category-links { display: none; }
   .category-picker { display: block; padding-block: 7px; }
